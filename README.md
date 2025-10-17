@@ -176,6 +176,51 @@ savon-marseille/
 - Tableau de bord analytique
 - Support multilingue
 
+## 🐳 Déploiement avec Docker
+
+Le projet inclut une configuration Docker pour un déploiement facile.
+
+### Prérequis
+- Docker
+- Docker Compose
+
+### Démarrage avec Docker
+
+1. **Cloner le repository**
+```bash
+git clone https://github.com/Starland9/savon-marseille.git
+cd savon-marseille
+```
+
+2. **Modifier les variables d'environnement**
+Éditez le fichier `docker-compose.yml` et changez `SECRET_KEY` en production.
+
+3. **Construire et démarrer les services**
+```bash
+docker-compose up --build
+```
+
+L'application sera accessible sur:
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:8000
+- Admin Django: http://localhost:8000/admin
+
+### Arrêter les services
+```bash
+docker-compose down
+```
+
+## 🎯 Prochaines Étapes Possibles
+
+- Intégration d'un système de paiement (Stripe, PayPal)
+- Système d'authentification utilisateur
+- Historique des commandes pour les clients
+- Notifications par email
+- Gestion des promotions et codes promo
+- Export des commandes en PDF
+- Tableau de bord analytique
+- Support multilingue
+
 ## 📝 Personnalisation
 
 ### Ajouter des Produits
