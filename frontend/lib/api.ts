@@ -73,7 +73,7 @@ export const productsAPI = {
 };
 
 export const categoriesAPI = {
-  getAll: () => api.get<Category[]>('/products/categories/'),
+  getAll: () => api.get<{ results: Category[] }>('/products/categories/'),
   getById: (id: number) => api.get<Category>(`/products/categories/${id}/`),
 };
 
