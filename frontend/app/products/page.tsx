@@ -20,7 +20,7 @@ export default function ProductsPage() {
           categoriesAPI.getAll(),
         ]);
         setProducts(productsRes.data.results);
-        setCategories(categoriesRes.data);
+        setCategories(categoriesRes.data.results);
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {
@@ -69,7 +69,7 @@ export default function ProductsPage() {
                 className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none"
               >
                 <option value="">Toutes les catégories</option>
-                {categories.map((category) => (
+                {categories && categories.map((category) => (
                   <option key={category.id} value={category.id}>
                     {category.name}
                   </option>
