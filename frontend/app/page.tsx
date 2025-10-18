@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { productsAPI, Product } from '@/lib/api';
-import ProductCard from '@/components/ProductCard';
-import Link from 'next/link';
-import { Sparkles, Package, Users, Award } from 'lucide-react';
+import { useEffect, useState } from "react";
+import { productsAPI, Product } from "@/lib/api";
+import ProductCard from "@/components/ProductCard";
+import Link from "next/link";
+import { Sparkles, Package, Users, Award } from "lucide-react";
 
 export default function Home() {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -16,7 +16,7 @@ export default function Home() {
         const response = await productsAPI.getFeatured();
         setFeaturedProducts(response.data);
       } catch (error) {
-        console.error('Error fetching featured products:', error);
+        console.error("Error fetching featured products:", error);
       } finally {
         setLoading(false);
       }
@@ -35,7 +35,8 @@ export default function Home() {
           </h1>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Découvrez notre collection de savons de Marseille traditionnels,
-            fabriqués selon des méthodes ancestrales avec des ingrédients naturels.
+            fabriqués selon des méthodes ancestrales avec des ingrédients
+            naturels.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -63,9 +64,11 @@ export default function Home() {
                 <Sparkles className="h-8 w-8 text-green-700" />
               </div>
               <h3 className="text-lg font-semibold mb-2">100% Naturel</h3>
-              <p className="text-gray-600">Ingrédients naturels et biodégradables</p>
+              <p className="text-gray-600">
+                Ingrédients naturels et biodégradables
+              </p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Package className="h-8 w-8 text-green-700" />
@@ -73,21 +76,25 @@ export default function Home() {
               <h3 className="text-lg font-semibold mb-2">Livraison Rapide</h3>
               <p className="text-gray-600">Expédition sous 24-48h</p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-green-700" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Vente en Gros</h3>
-              <p className="text-gray-600">Prix avantageux pour les professionnels</p>
+              <p className="text-gray-600">
+                Prix avantageux pour les professionnels
+              </p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="h-8 w-8 text-green-700" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Qualité Garantie</h3>
-              <p className="text-gray-600">Fabrication traditionnelle marseillaise</p>
+              <p className="text-gray-600">
+                Fabrication traditionnelle marseillaise
+              </p>
             </div>
           </div>
         </div>
@@ -96,8 +103,10 @@ export default function Home() {
       {/* Featured Products Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Nos Produits Vedettes</h2>
-          
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Nos Produits Vedettes
+          </h2>
+
           {loading ? (
             <div className="text-center py-12">
               <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-700"></div>
@@ -127,13 +136,14 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Notre Histoire</h2>
             <p className="text-lg text-gray-700 mb-4">
-              Le savon de Marseille est un produit traditionnel français fabriqué depuis des siècles.
-              Notre engagement est de perpétuer cette tradition en utilisant uniquement des ingrédients
-              naturels et en suivant les méthodes de fabrication ancestrales.
+              Le savon de Marseille est un produit traditionnel français
+              fabriqué depuis des siècles. Notre engagement est de perpétuer
+              cette tradition en utilisant uniquement des ingrédients naturels
+              et en suivant les méthodes de fabrication ancestrales.
             </p>
             <p className="text-lg text-gray-700">
-              Chaque savon est soigneusement fabriqué à Marseille, garantissant une qualité exceptionnelle
-              et un respect de l'environnement.
+              Chaque savon est soigneusement fabriqué à Marseille, garantissant
+              une qualité exceptionnelle et un respect de l'environnement.
             </p>
           </div>
         </div>
@@ -141,4 +151,3 @@ export default function Home() {
     </div>
   );
 }
-
