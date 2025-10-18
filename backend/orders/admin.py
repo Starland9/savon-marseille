@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Order, OrderItem
+from .models import Order, OrderItem, ServiceBooking
 
 
 class OrderItemInline(admin.TabularInline):
@@ -15,4 +15,12 @@ class OrderAdmin(admin.ModelAdmin):
     search_fields = ['customer_name', 'customer_email', 'customer_phone']
     readonly_fields = ['total_amount', 'created_at', 'updated_at']
     inlines = [OrderItemInline]
+
+
+@admin.register(ServiceBooking)
+class ServiceBookingAdmin(admin.ModelAdmin):
+    list_display = ['id', 'service', 'customer_name', 'customer_email', 'booking_date', 'booking_time', 'status', 'created_at']
+    list_filter = ['status', 'booking_date', 'created_at']
+    search_fields = ['customer_name', 'customer_email', 'customer_phone']
+    readonly_fields = ['created_at', 'updated_at']
 

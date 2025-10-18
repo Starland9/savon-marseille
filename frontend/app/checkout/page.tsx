@@ -20,7 +20,7 @@ export default function CheckoutPage() {
     shipping_address: '',
     shipping_city: '',
     shipping_postal_code: '',
-    shipping_country: 'France',
+    shipping_country: 'Cameroun',
     order_type: 'retail' as 'retail' | 'wholesale',
     notes: '',
   });
@@ -244,7 +244,7 @@ export default function CheckoutPage() {
                     <span>
                       {item.product.name} x {item.quantity}
                     </span>
-                    <span>€{(price * item.quantity).toFixed(2)}</span>
+                    <span>{(price * item.quantity).toFixed(0)} FCFA</span>
                   </div>
                 );
               })}
@@ -253,7 +253,7 @@ export default function CheckoutPage() {
             <div className="border-t pt-4">
               <div className="flex justify-between text-lg font-bold">
                 <span>Total</span>
-                <span className="text-green-700">€{total.toFixed(2)}</span>
+                <span className="text-green-700">{total.toFixed(0)} FCFA</span>
               </div>
             </div>
           </div>

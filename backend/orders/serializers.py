@@ -1,15 +1,16 @@
 from rest_framework import serializers
-from .models import Order, OrderItem
-from products.serializers import ProductSerializer
+from .models import Order, OrderItem, ServiceBooking
+from products.serializers import ProductSerializer, ServiceSerializer
 
 
 class OrderItemSerializer(serializers.ModelSerializer):
     product_details = ProductSerializer(source='product', read_only=True)
+    service_details = ServiceSerializer(source='service', read_only=True)
     subtotal = serializers.ReadOnlyField()
 
     class Meta:
         model = OrderItem
-        fields = ['id', 'product', 'product_details', 'quantity', 'price', 'subtotal']
+        fields = ['id', 'product', 'service', 'product_details', 'service_details', 'quantity', 'price', 'subtotal']
 
 
 class OrderSerializer(serializers.ModelSerializer):
@@ -67,3 +68,17 @@ class OrderCreateSerializer(serializers.ModelSerializer):
             product.save()
 
         return order
+
+
+class ServiceBookingSerializer(serializers.ModelSerializer):
+    service_details = ServiceSerializer(source='service', read_only=True)
+
+    class Meta:
+        model = ServiceBooking
+        fields = [
+            'id', 'service', 'service_details', 'customer_name', 'customer_email', 
+            'customer_phone', 'booking_date', 'booking_time', 'status', 'notes',
+            'created_at', 'updated_at'
+        ]
+        read_only_fields = ['created_at', 'updated_at']
+
