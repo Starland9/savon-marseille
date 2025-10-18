@@ -7,6 +7,7 @@ Cette plateforme e-commerce complète permet la vente de savon de Marseille auth
 ## 🎯 Fonctionnalités Principales
 
 ### 1. Catalogue de Produits
+
 - **Affichage de produits** avec images, descriptions, prix
 - **Filtrage par catégorie** (Traditionnel, Parfumé, Artisanal)
 - **Recherche textuelle** dans les noms et descriptions
@@ -15,6 +16,7 @@ Cette plateforme e-commerce complète permet la vente de savon de Marseille auth
 - **Gestion du stock** en temps réel
 
 ### 2. Pages Produits
+
 - **Page de liste** avec grille responsive
 - **Page de détail** pour chaque produit avec:
   - Image en grand format
@@ -26,6 +28,7 @@ Cette plateforme e-commerce complète permet la vente de savon de Marseille auth
   - Ajout au panier avec sélection de quantité
 
 ### 3. Panier d'Achat
+
 - **Persistance locale** (localStorage)
 - **Mise à jour en temps réel** du nombre d'articles
 - **Modification des quantités** directement dans le panier
@@ -34,6 +37,7 @@ Cette plateforme e-commerce complète permet la vente de savon de Marseille auth
 - **Sélection du type de commande** (détail/gros) avec mise à jour des prix
 
 ### 4. Processus de Commande
+
 - **Formulaire de commande** complet avec:
   - Informations client (nom, email, téléphone)
   - Adresse de livraison complète
@@ -45,12 +49,14 @@ Cette plateforme e-commerce complète permet la vente de savon de Marseille auth
 - **Mise à jour automatique du stock**
 
 ### 5. Vente en Gros
+
 - **Page dédiée** aux professionnels
 - **Prix réduits** affichés clairement
 - **Avantages expliqués** (prix, stock, support)
 - **Formulaire de contact** pour commandes personnalisées
 
 ### 6. Interface Utilisateur
+
 - **Design responsive** (mobile, tablette, desktop)
 - **Navigation intuitive** avec menu clair
 - **Indicateur de panier** avec badge de nombre d'articles
@@ -82,11 +88,13 @@ POST /api/orders/orders/{id}/cancel/    # Annuler une commande
 ### Modèles de Données
 
 #### Category (Catégorie)
+
 - Nom
 - Description
 - Dates de création/modification
 
 #### Product (Produit)
+
 - Nom
 - Description
 - Catégorie
@@ -100,6 +108,7 @@ POST /api/orders/orders/{id}/cancel/    # Annuler une commande
 - Dates de création/modification
 
 #### ProductReview (Avis)
+
 - Produit associé
 - Nom de l'utilisateur
 - Email
@@ -108,6 +117,7 @@ POST /api/orders/orders/{id}/cancel/    # Annuler une commande
 - Date de création
 
 #### Order (Commande)
+
 - Informations client (nom, email, téléphone)
 - Adresse de livraison (adresse, ville, code postal, pays)
 - Type de commande (détail/gros)
@@ -117,12 +127,14 @@ POST /api/orders/orders/{id}/cancel/    # Annuler une commande
 - Dates de création/modification
 
 #### OrderItem (Article de commande)
+
 - Commande associée
 - Produit
 - Quantité
 - Prix au moment de l'achat
 
 ### Administration Django
+
 - **Interface admin complète** pour gérer:
   - Catégories
   - Produits (avec modification en ligne du stock et statut)
@@ -134,18 +146,21 @@ POST /api/orders/orders/{id}/cancel/    # Annuler une commande
 ## 🎨 Pages Frontend
 
 ### 1. Page d'Accueil (/)
+
 - Hero section avec appel à l'action
 - Section avantages (4 points forts)
 - Produits vedettes (8 premiers)
 - Section "Notre Histoire"
 
 ### 2. Page Produits (/products)
+
 - Barre de recherche
 - Filtre par catégorie
 - Grille de produits
 - Pagination
 
 ### 3. Page Détail Produit (/products/[id])
+
 - Image produit
 - Informations complètes
 - Prix détail et gros
@@ -154,6 +169,7 @@ POST /api/orders/orders/{id}/cancel/    # Annuler une commande
 - Section avis clients
 
 ### 4. Page Panier (/cart)
+
 - Liste des articles
 - Modification quantités
 - Suppression d'articles
@@ -162,17 +178,20 @@ POST /api/orders/orders/{id}/cancel/    # Annuler une commande
 - Bouton vers paiement
 
 ### 5. Page Paiement (/checkout)
+
 - Formulaire complet
 - Récapitulatif de commande
 - Confirmation de commande
 - Numéro de commande
 
 ### 6. Page Vente en Gros (/wholesale)
+
 - Présentation des avantages
 - Tous les produits avec prix de gros
 - Section contact
 
 ### 7. Page À Propos (/about)
+
 - Histoire du savon de Marseille
 - Nos valeurs
 - Processus de fabrication
@@ -189,6 +208,7 @@ POST /api/orders/orders/{id}/cancel/    # Annuler une commande
 ## 📦 Déploiement
 
 ### Docker
+
 - **Backend Dockerfile** avec Gunicorn
 - **Frontend Dockerfile** avec build optimisé
 - **Docker Compose** pour orchestration facile
@@ -197,11 +217,13 @@ POST /api/orders/orders/{id}/cancel/    # Annuler une commande
 ### Variables d'Environnement
 
 **Backend:**
+
 - `DEBUG` - Mode debug (False en production)
 - `SECRET_KEY` - Clé secrète Django
 - `ALLOWED_HOSTS` - Hôtes autorisés
 
 **Frontend:**
+
 - `NEXT_PUBLIC_API_URL` - URL de l'API backend
 
 ## 🚀 Performance

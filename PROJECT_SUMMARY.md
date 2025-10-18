@@ -16,6 +16,7 @@ Successfully created a complete e-commerce platform for selling Marseille soap (
 ## 🏗️ Architecture
 
 ### Backend (Django)
+
 ```
 backend/
 ├── savon_marseille/      # Project settings
@@ -32,6 +33,7 @@ backend/
 ```
 
 ### Frontend (Next.js)
+
 ```
 frontend/
 ├── app/                 # Next.js pages
@@ -54,6 +56,7 @@ frontend/
 ## 🎨 Features Implemented
 
 ### Customer Features
+
 ✅ Browse product catalog with images and descriptions
 ✅ Search products by name/description
 ✅ Filter products by category
@@ -65,6 +68,7 @@ frontend/
 ✅ Order confirmation with order number
 
 ### Admin Features
+
 ✅ Django admin panel for product management
 ✅ Category management
 ✅ Order management with status tracking
@@ -72,6 +76,7 @@ frontend/
 ✅ Review moderation
 
 ### Technical Features
+
 ✅ REST API with Django REST Framework
 ✅ TypeScript for type safety
 ✅ Responsive design with Tailwind CSS
@@ -97,10 +102,12 @@ frontend/
 ## 🚀 Deployment Options
 
 ### Development
+
 - Backend: `python manage.py runserver`
 - Frontend: `npm run dev`
 
 ### Production (Docker)
+
 - `docker-compose up --build`
 - Ready for deployment to any cloud platform
 
@@ -122,6 +129,7 @@ The platform is designed to be extensible. Potential additions:
 ## 🎓 Learning Outcomes
 
 This project demonstrates:
+
 - Full-stack web development
 - RESTful API design
 - React/Next.js best practices
@@ -156,6 +164,7 @@ This project demonstrates:
 The Savon de Marseille e-commerce platform is **production-ready** for a small to medium-sized business. The codebase is clean, well-organized, and follows best practices for both Django and Next.js development.
 
 The platform successfully addresses all requirements from the original problem statement:
+
 - ✅ Online soap sales platform
 - ✅ Retail and wholesale capabilities
 - ✅ Complete order process

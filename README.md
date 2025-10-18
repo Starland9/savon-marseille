@@ -15,12 +15,14 @@ Plateforme de vente en ligne de savon de Marseille authentique avec vente au dé
 ## 🛠️ Technologies
 
 ### Backend
+
 - **Django 5.0** - Framework web Python
 - **Django REST Framework** - API REST
 - **SQLite** - Base de données (facilement remplaçable par PostgreSQL)
 - **Pillow** - Traitement d'images
 
 ### Frontend
+
 - **Next.js 15** - Framework React
 - **TypeScript** - Typage statique
 - **Tailwind CSS** - Styles
@@ -38,37 +40,44 @@ Plateforme de vente en ligne de savon de Marseille authentique avec vente au dé
 ### Backend (Django)
 
 1. **Naviguer vers le dossier backend**
+
 ```bash
 cd backend
 ```
 
 2. **Créer un environnement virtuel**
+
 ```bash
 python -m venv venv
 source venv/bin/activate  # Sur Windows: venv\Scripts\activate
 ```
 
 3. **Installer les dépendances**
+
 ```bash
 pip install -r requirements.txt
 ```
 
 4. **Appliquer les migrations**
+
 ```bash
 python manage.py migrate
 ```
 
 5. **Créer un superutilisateur (optionnel)**
+
 ```bash
 python manage.py createsuperuser
 ```
 
 6. **Charger les données d'exemple**
+
 ```bash
 python manage.py populate_db
 ```
 
 7. **Démarrer le serveur**
+
 ```bash
 python manage.py runserver
 ```
@@ -79,21 +88,25 @@ L'administration Django sur `http://localhost:8000/admin`
 ### Frontend (Next.js)
 
 1. **Naviguer vers le dossier frontend**
+
 ```bash
 cd frontend
 ```
 
 2. **Installer les dépendances**
+
 ```bash
 npm install
 ```
 
 3. **Copier le fichier d'environnement**
+
 ```bash
 cp .env.example .env.local
 ```
 
 4. **Démarrer le serveur de développement**
+
 ```bash
 npm run dev
 ```
@@ -139,6 +152,7 @@ savon-marseille/
 ## 🔧 API Endpoints
 
 ### Produits
+
 - `GET /api/products/categories/` - Liste des catégories
 - `GET /api/products/products/` - Liste des produits
 - `GET /api/products/products/{id}/` - Détails d'un produit
@@ -146,6 +160,7 @@ savon-marseille/
 - `GET /api/products/reviews/` - Avis clients
 
 ### Commandes
+
 - `POST /api/orders/orders/` - Créer une commande
 - `GET /api/orders/orders/{id}/` - Détails d'une commande
 - `POST /api/orders/orders/{id}/cancel/` - Annuler une commande
@@ -153,6 +168,7 @@ savon-marseille/
 ## 🎨 Fonctionnalités Principales
 
 ### Pour les Clients
+
 1. **Navigation intuitive** - Menu clair avec accès facile aux différentes sections
 2. **Recherche et filtres** - Trouvez rapidement les produits souhaités
 3. **Panier intelligent** - Sauvegarde automatique, mise à jour en temps réel
@@ -160,6 +176,7 @@ savon-marseille/
 5. **Prix différenciés** - Prix de détail et prix de gros clairement affichés
 
 ### Pour les Administrateurs
+
 1. **Interface d'administration Django** - Gestion complète des produits et commandes
 2. **Gestion des stocks** - Suivi automatique des stocks lors des commandes
 3. **Gestion des commandes** - Suivi du statut des commandes
@@ -181,12 +198,14 @@ savon-marseille/
 Le projet inclut une configuration Docker pour un déploiement facile.
 
 ### Prérequis
+
 - Docker
 - Docker Compose
 
 ### Démarrage avec Docker
 
 1. **Cloner le repository**
+
 ```bash
 git clone https://github.com/Starland9/savon-marseille.git
 cd savon-marseille
@@ -196,11 +215,13 @@ cd savon-marseille
 Éditez le fichier `docker-compose.yml` et changez `SECRET_KEY` en production.
 
 3. **Construire et démarrer les services**
+
 ```bash
 docker-compose up --build
 ```
 
 L'application sera accessible sur:
+
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:8000
 - Admin Django: http://localhost:8000/admin
@@ -224,6 +245,7 @@ docker-compose down
 ## 📝 Personnalisation
 
 ### Ajouter des Produits
+
 1. Accédez à l'admin Django: `http://localhost:8000/admin`
 2. Connectez-vous avec vos identifiants superutilisateur
 3. Naviguez vers "Products" > "Add"
@@ -234,12 +256,14 @@ Les styles sont gérés avec Tailwind CSS dans le frontend. Modifiez les classes
 
 ### Configurer la Base de Données
 Par défaut, SQLite est utilisé. Pour passer à PostgreSQL:
+
 1. Installez `psycopg2-binary`
 2. Modifiez `DATABASES` dans `backend/savon_marseille/settings.py`
 
 ## 🤝 Support
 
 Pour toute question ou problème:
+
 - Email: contact@savon-marseille.fr
 - Ouvrez une issue sur le repository
 
