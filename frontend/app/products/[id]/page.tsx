@@ -122,11 +122,11 @@ export default function ProductDetailPage() {
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Prix de détail</p>
-                <p className="text-3xl font-bold text-green-700">€{parseFloat(product.price).toFixed(2)}</p>
+                <p className="text-3xl font-bold text-green-700">{parseFloat(product.price).toFixed(0)} FCFA</p>
               </div>
               <div>
                 <p className="text-sm text-gray-600 mb-1">Prix de gros</p>
-                <p className="text-2xl font-bold text-blue-700">€{parseFloat(product.wholesale_price).toFixed(2)}</p>
+                <p className="text-2xl font-bold text-blue-700">{parseFloat(product.wholesale_price).toFixed(0)} FCFA</p>
               </div>
             </div>
           </div>

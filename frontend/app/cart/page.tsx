@@ -60,7 +60,7 @@ export default function CartPage() {
                     <h3 className="font-semibold text-lg">{item.product.name}</h3>
                     <p className="text-sm text-gray-600">{item.product.weight}</p>
                     <p className="text-green-700 font-bold mt-2">
-                      €{price.toFixed(2)}
+                      {price.toFixed(0)} FCFA
                     </p>
                   </div>
 
@@ -83,7 +83,7 @@ export default function CartPage() {
 
                   <div className="text-right">
                     <p className="font-bold text-lg">
-                      €{(price * item.quantity).toFixed(2)}
+                      {(price * item.quantity).toFixed(0)} FCFA
                     </p>
                     <button
                       onClick={() => removeFromCart(item.product.id)}
@@ -141,7 +141,7 @@ export default function CartPage() {
             <div className="border-t pt-4 mb-6">
               <div className="flex justify-between text-lg font-bold">
                 <span>Total</span>
-                <span className="text-green-700">€{total.toFixed(2)}</span>
+                <span className="text-green-700">{total.toFixed(0)} FCFA</span>
               </div>
             </div>
 

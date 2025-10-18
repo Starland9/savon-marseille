@@ -62,7 +62,7 @@ export default function ProductCard({ product, isWholesale = false }: ProductCar
         <div className="flex items-center justify-between">
           <div>
             <p className="text-2xl font-bold text-green-700">
-              €{price.toFixed(2)}
+              {price.toFixed(0)} FCFA
             </p>
             {isWholesale && (
               <p className="text-xs text-gray-500">Prix de gros</p>
