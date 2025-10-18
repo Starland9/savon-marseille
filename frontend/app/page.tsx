@@ -31,12 +31,11 @@ export default function Home() {
       <section className="bg-gradient-to-r from-green-600 to-green-800 text-white">
         <div className="container mx-auto px-4 py-20 text-center">
           <h1 className="text-5xl font-bold mb-6">
-            Savon de Marseille Authentique
+            Marketplace Cosmétiques Cameroun
           </h1>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Découvrez notre collection de savons de Marseille traditionnels,
-            fabriqués selon des méthodes ancestrales avec des ingrédients
-            naturels.
+            Découvrez une large gamme de produits cosmétiques et services de beauté.
+            Achetez et vendez facilement sur notre plateforme.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -63,9 +62,9 @@ export default function Home() {
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Sparkles className="h-8 w-8 text-green-700" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">100% Naturel</h3>
+              <h3 className="text-lg font-semibold mb-2">Produits Variés</h3>
               <p className="text-gray-600">
-                Ingrédients naturels et biodégradables
+                Cosmétiques, parfums, soins et plus encore
               </p>
             </div>
 
@@ -74,16 +73,16 @@ export default function Home() {
                 <Package className="h-8 w-8 text-green-700" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Livraison Rapide</h3>
-              <p className="text-gray-600">Expédition sous 24-48h</p>
+              <p className="text-gray-600">Livraison dans tout le Cameroun</p>
             </div>
 
             <div className="text-center">
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-green-700" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Vente en Gros</h3>
+              <h3 className="text-lg font-semibold mb-2">Multi-vendeurs</h3>
               <p className="text-gray-600">
-                Prix avantageux pour les professionnels
+                Créez votre boutique et vendez vos produits
               </p>
             </div>
 
@@ -93,7 +92,7 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-semibold mb-2">Qualité Garantie</h3>
               <p className="text-gray-600">
-                Fabrication traditionnelle marseillaise
+                Produits vérifiés et services professionnels
               </p>
             </div>
           </div>

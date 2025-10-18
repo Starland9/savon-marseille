@@ -14,8 +14,8 @@ export default function Header() {
           <Link href="/" className="flex items-center space-x-2">
             <Package className="h-8 w-8" />
             <div>
-              <h1 className="text-2xl font-bold">Savon de Marseille</h1>
-              <p className="text-sm text-green-100">Authentique & Naturel</p>
+              <h1 className="text-2xl font-bold">Cosmétiques Marketplace</h1>
+              <p className="text-sm text-green-100">Beauté & Bien-être</p>
             </div>
           </Link>
           

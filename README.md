@@ -1,16 +1,23 @@
-# Savon de Marseille - Plateforme E-Commerce
+# Cosmétiques Marketplace - Plateforme E-Commerce
 
-Plateforme de vente en ligne de savon de Marseille authentique avec vente au détail et en gros.
+Plateforme marketplace de vente de produits cosmétiques et services de beauté au Cameroun.
 
 ## 🌟 Fonctionnalités
 
+- **Marketplace multi-vendeurs** - Les vendeurs peuvent créer des boutiques et publier leurs produits/services
+- **Produits cosmétiques variés** - Savons, huiles, parfums, vernis à ongles, maquillage, perruques, etc.
+- **Services de beauté** - Pose d'ongles, manucure, pédicure, coiffure, pose de perruque, etc.
+- **Achat sans inscription** - Les clients peuvent commander sans créer de compte
+- **Vente avec inscription** - Les vendeurs doivent créer un compte et une boutique
 - **Catalogue de produits** avec filtres et recherche
 - **Panier d'achat** persistant
 - **Système de commande** complet
+- **Réservation de services** avec prise de rendez-vous
 - **Vente au détail et en gros** avec prix différenciés
 - **Interface responsive** et professionnelle
-- **Administration Django** pour gérer les produits et commandes
+- **Administration Django** pour gérer les boutiques, produits, services et commandes
 - **API REST** pour le frontend
+- **Devise locale** - FCFA (XAF)
 
 ## 🛠️ Technologies
 
@@ -119,13 +126,18 @@ Le frontend sera accessible sur `http://localhost:3000`
 savon-marseille/
 ├── backend/
 │   ├── savon_marseille/          # Configuration Django
-│   ├── products/                  # App produits
-│   │   ├── models.py             # Modèles Category, Product, ProductReview
+│   ├── products/                  # App produits et services
+│   │   ├── models.py             # Modèles Category, Product, Service, Reviews
 │   │   ├── serializers.py        # Serializers API
 │   │   ├── views.py              # ViewSets API
 │   │   └── admin.py              # Admin Django
-│   ├── orders/                    # App commandes
-│   │   ├── models.py             # Modèles Order, OrderItem
+│   ├── orders/                    # App commandes et réservations
+│   │   ├── models.py             # Modèles Order, OrderItem, ServiceBooking
+│   │   ├── serializers.py        # Serializers API
+│   │   ├── views.py              # ViewSets API
+│   │   └── admin.py              # Admin Django
+│   ├── users/                     # App utilisateurs et boutiques
+│   │   ├── models.py             # Modèle Shop
 │   │   ├── serializers.py        # Serializers API
 │   │   ├── views.py              # ViewSets API
 │   │   └── admin.py              # Admin Django
@@ -157,7 +169,21 @@ savon-marseille/
 - `GET /api/products/products/` - Liste des produits
 - `GET /api/products/products/{id}/` - Détails d'un produit
 - `GET /api/products/products/featured/` - Produits vedettes
-- `GET /api/products/reviews/` - Avis clients
+- `GET /api/products/reviews/` - Avis clients sur produits
+
+### Services
+
+- `GET /api/products/services/` - Liste des services
+- `GET /api/products/services/{id}/` - Détails d'un service
+- `GET /api/products/services/featured/` - Services vedettes
+- `GET /api/products/service-reviews/` - Avis clients sur services
+
+### Boutiques
+
+- `GET /api/users/shops/` - Liste des boutiques
+- `GET /api/users/shops/{id}/` - Détails d'une boutique
+- `POST /api/users/shops/` - Créer une boutique (authentification requise)
+- `GET /api/users/shops/my_shops/` - Mes boutiques (authentification requise)
 
 ### Commandes
 
@@ -165,33 +191,55 @@ savon-marseille/
 - `GET /api/orders/orders/{id}/` - Détails d'une commande
 - `POST /api/orders/orders/{id}/cancel/` - Annuler une commande
 
+### Réservations de services
+
+- `POST /api/orders/bookings/` - Créer une réservation
+- `GET /api/orders/bookings/{id}/` - Détails d'une réservation
+- `POST /api/orders/bookings/{id}/cancel/` - Annuler une réservation
+- `POST /api/orders/bookings/{id}/confirm/` - Confirmer une réservation
+
 ## 🎨 Fonctionnalités Principales
 
 ### Pour les Clients
 
 1. **Navigation intuitive** - Menu clair avec accès facile aux différentes sections
-2. **Recherche et filtres** - Trouvez rapidement les produits souhaités
+2. **Recherche et filtres** - Trouvez rapidement les produits et services souhaités
 3. **Panier intelligent** - Sauvegarde automatique, mise à jour en temps réel
-4. **Checkout simplifié** - Processus de commande en une seule page
+4. **Checkout simplifié** - Processus de commande en une seule page, sans besoin de créer un compte
 5. **Prix différenciés** - Prix de détail et prix de gros clairement affichés
+6. **Réservation de services** - Prenez rendez-vous pour des services de beauté
+7. **Devise locale** - Prix affichés en FCFA (XAF)
+
+### Pour les Vendeurs
+
+1. **Création de boutique** - Inscription et création de votre boutique personnalisée
+2. **Gestion de produits** - Ajoutez et gérez vos produits cosmétiques
+3. **Gestion de services** - Proposez des services de beauté avec réservation
+4. **Suivi des commandes** - Visualisez et gérez vos commandes
+5. **Profil de boutique** - Logo, bannière, description et informations de contact
+6. **Vérification** - Les boutiques peuvent être vérifiées par les administrateurs
 
 ### Pour les Administrateurs
 
-1. **Interface d'administration Django** - Gestion complète des produits et commandes
-2. **Gestion des stocks** - Suivi automatique des stocks lors des commandes
-3. **Gestion des commandes** - Suivi du statut des commandes
-4. **Catégorisation** - Organisation des produits par catégories
+1. **Interface d'administration Django** - Gestion complète de la plateforme
+2. **Gestion des boutiques** - Approbation et modération des boutiques
+3. **Gestion des produits et services** - Modération et organisation
+4. **Gestion des commandes** - Suivi du statut des commandes
+5. **Gestion des réservations** - Suivi des réservations de services
+6. **Catégorisation** - Organisation des produits et services par catégories
 
 ## 🎯 Prochaines Étapes Possibles
 
-- Intégration d'un système de paiement (Stripe, PayPal)
-- Système d'authentification utilisateur
+- Intégration d'un système de paiement mobile (Mobile Money, Orange Money)
+- Système d'authentification utilisateur complet avec tableau de bord
+- Tableau de bord vendeur avec statistiques de ventes
 - Historique des commandes pour les clients
-- Notifications par email
+- Notifications par email et SMS
 - Gestion des promotions et codes promo
 - Export des commandes en PDF
 - Tableau de bord analytique
-- Support multilingue
+- Support multilingue (Français, Anglais)
+- Application mobile (React Native)
 
 ## 🐳 Déploiement avec Docker
 
