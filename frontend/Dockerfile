@@ -1,13 +1,17 @@
 # Frontend Dockerfile
 FROM node:20-alpine AS base
 
+
 # Install dependencies only when needed
 FROM base AS deps
 WORKDIR /app
 
-# Install dependencies
-COPY package.json package-lock.json ./
-RUN npm ci
+# Installer pnpm
+RUN npm install -g pnpm
+
+# Copier les fichiers de dépendances pnpm
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
 
 # Rebuild the source code only when needed
 FROM base AS builder
@@ -17,7 +21,7 @@ COPY . .
 
 # Build the application
 ENV NEXT_TELEMETRY_DISABLED=1
-RUN npm run build
+RUN pnpm run build
 
 # Production image, copy all the files and run next
 FROM base AS runner
